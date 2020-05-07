@@ -16,10 +16,24 @@ class CarouselView: NibView {
     
     func setupView() {
         guard let delegate = collectionView.delegate as? UICollectionViewDelegateFlowLayout else { return }
-        let height = delegate.collectionView?(collectionView, layout: collectionView.collectionViewLayout, sizeForItemAt: IndexPath(item: 0, section: 0)).height
-        self.collectionViewHeight.constant = height ?? 0
+        
+        var maxHeight : CGFloat = 0
+        
+        for i in (0...2) {
+            let cell = self.collectionView.layoutAttributesForItem(at: IndexPath(item: i, section: 0))
+            print("cell frame is \(cell?.frame.height)")
+            
+            if let height = cell?.frame.height, height > maxHeight {
+                maxHeight = height
+            }
+        }
+        
+        self.collectionViewHeight.constant = maxHeight
         self.collectionViewHeight.isActive = true
-        print("HEIGHT: \(height)")
+        
+        // refresh the height of cell
+        
+        print("HEIGHT: \(maxHeight)")
     }
     
     private func updateUI() {
