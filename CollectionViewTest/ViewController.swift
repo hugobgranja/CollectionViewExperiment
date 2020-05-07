@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        print("wat")
         carouselView.setupView()
     }
     
