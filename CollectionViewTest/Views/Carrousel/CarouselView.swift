@@ -15,30 +15,21 @@ class CarouselView: NibView {
     @IBOutlet private var collectionViewHeight: NSLayoutConstraint!
     
     func setupView() {
-        guard let delegate = collectionView.delegate as? UICollectionViewDelegateFlowLayout else { return }
-        
-        var maxHeight : CGFloat = 0
+        var maxHeight: CGFloat = 0
         
         for i in (0...2) {
-            let cell = self.collectionView.layoutAttributesForItem(at: IndexPath(item: i, section: 0))
-            print("cell frame is \(cell?.frame.height)")
+            let cellLayout = self.collectionView.layoutAttributesForItem(at: IndexPath(item: i, section: 0))
+            print("cell frame is \(cellLayout?.frame.height)")
             
-            if let height = cell?.frame.height, height > maxHeight {
+            if let height = cellLayout?.frame.height, height > maxHeight {
                 maxHeight = height
             }
         }
         
-        self.collectionViewHeight.constant = maxHeight
+        self.collectionViewHeight.constant = maxHeight.rounded(.up)
         self.collectionViewHeight.isActive = true
         
-        // refresh the height of cell
-        
         print("HEIGHT: \(maxHeight)")
-    }
-    
-    private func updateUI() {
-        self.collectionView.reloadData()
-        self.pageControl.numberOfPages = 3
     }
     
 }
@@ -63,7 +54,7 @@ extension CarouselView: UICollectionViewDelegate {
         if cell.isNew() {
             let component = ComponentOne()
             component.translatesAutoresizingMaskIntoConstraints = false
-            component.maxWidth = bounds.width - 10
+            component.maxWidth = bounds.width
             cell.add(component: component)
         }
         

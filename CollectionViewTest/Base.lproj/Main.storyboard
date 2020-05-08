@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6NH-D9-pma">
-                                <rect key="frame" x="10" y="54" width="394" height="808"/>
+                                <rect key="frame" x="10" y="54" width="394" height="200"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="7w8-eS-e7i" customClass="CarouselView" customModule="CollectionViewTest" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="808"/>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="7w8-eS-e7i" customClass="CarouselView" customModule="CollectionViewTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -27,9 +27,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6NH-D9-pma" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3i7-Ft-JPE"/>
                             <constraint firstItem="6NH-D9-pma" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="8me-Ae-2jU"/>
                             <constraint firstItem="6NH-D9-pma" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="JFP-Iw-Znu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6NH-D9-pma" secondAttribute="bottom" id="hyg-Ad-oEu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6NH-D9-pma" secondAttribute="trailing" constant="10" id="zUZ-z0-jRf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
